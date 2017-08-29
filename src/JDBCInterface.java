@@ -13,9 +13,9 @@ import com.mysql.jdbc.Driver;
 
 public class JDBCInterface {
 
-    static final String DB_URL = "jdbc:mysql://localhost/foodmart";
+    static final String DB_URL = "e.g jdbc:mysql://localhost/";
     static final String USER = "root";
-    static final String PASS = "bmth2345";
+    static final String PASS = "password";
 
     /**
      * Main Method creates a connection to the local MySQL database
@@ -107,7 +107,7 @@ public class JDBCInterface {
 
             }
 
-            String updateString = "SELECT DISTINCT education_level, department_description, pay_type, full_name FROM employee INNER JOIN department INNER JOIN position WHERE education_level = ? AND department_description = ? AND pay_type = ?";
+            String updateString = "SELECT education_level, department_description, pay_type, full_name FROM employee INNER JOIN department INNER JOIN position WHERE education_level = ? AND department_description = ? AND pay_type = ?";
             stmt = conn.prepareStatement(updateString);
             stmt.setString(1, educationLevel);
             stmt.setString(2, departmentDesc);
